@@ -1,0 +1,19 @@
+public class MaxRotate 
+{
+    
+    public static long maxRot (long n) 
+    {
+        long biggest = n;
+        StringBuilder number = new StringBuilder("" + n);
+        int nSize = number.length();
+        for(int i = 0; i < nSize - 1; i++)
+        {
+        char temp = number.charAt(i);
+        number.deleteCharAt(i);
+        number.append(temp);
+        long result = Long.parseLong(number.toString());
+        if(result > biggest) biggest = result;
+        }
+        return biggest;
+    }
+}
